@@ -1,8 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/NavBar.css";
 
 const NavBar = () => {
   const [searchQuery, setSearchQuery] = React.useState("");
+  const navigate = useNavigate();
 
   const handleSearchText = (event) => {
     setSearchQuery(event.target.value);
@@ -10,8 +12,7 @@ const NavBar = () => {
 
   const handleSearch = (event) => {
     event.preventDefault();
-    console.log("Searching...", searchQuery);
-    // Add the search functionality here
+    console.log(searchQuery);
   };
 
   return (
@@ -22,6 +23,7 @@ const NavBar = () => {
           alt="Spotify Logo"
           width={140}
           height={40}
+          onClick={()=>navigate("/")}
         />
       </div>
 
@@ -32,6 +34,7 @@ const NavBar = () => {
           placeholder="What do you want to listen to?"
           value={searchQuery}
           onChange={handleSearchText}
+          onClick={() => navigate("/search")}
         />
       </form>
 
