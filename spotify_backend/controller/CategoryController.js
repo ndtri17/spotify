@@ -17,7 +17,7 @@ router.get("/categories", (req, res) => {
 
 router.get("/categories/:categoryName", (req, res) => {
   const query = `
-        SELECT albums.id, albums.name, albums.cover
+        SELECT albums.id, albums.name, albums.cover, albums.release_date
         FROM albums
         JOIN genres_albums ON albums.id = genres_albums.album_id
         JOIN genres ON genres.id = genres_albums.genre_id

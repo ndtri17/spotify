@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import api from "../api/api";
 import "../styles/CategoryPage.css";
 
@@ -7,6 +7,7 @@ const CategoryPage = () => {
   const { categoryName } = useParams();
   const [albums, setAlbums] = useState([]);
   const [visibleAlbums, setVisibleAlbums] = useState(24);
+  const navigate = useNavigate();
 
   const fetchAlbumsInCategory = async () => {
     try {
@@ -33,7 +34,7 @@ const CategoryPage = () => {
         <h1>{categoryName}</h1>
         <div className="categoryPage__albums-grid">
           {albums.slice(0, visibleAlbums).map((album) => (
-            <div key={album.id} className="categoryPage__albums-grid-item">
+            <div key={album.id} className="categoryPage__albums-grid-item" onClick={() => navigate(`/album/${album.id}`)}>
               <img
                 src={album.cover}
                 alt={album.name}

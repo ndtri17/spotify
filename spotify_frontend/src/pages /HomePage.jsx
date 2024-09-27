@@ -3,6 +3,7 @@ import React from "react";
 import { useEffect } from "react";
 import "../styles/HomePage.css";
 import api from "../api/api";
+import { useNavigate } from "react-router-dom";
 
 const Homepage = () => {
   const [popularArtists, setPopularArtists] = React.useState([]);
@@ -10,6 +11,8 @@ const Homepage = () => {
   const [popularAlbums, setPopularAlbums] = React.useState([]);
 
   const [popularSongs, setPopularSongs] = React.useState([]);
+
+  const navigate = useNavigate();
 
   const fetchArtists = async () => {
     try {
@@ -60,6 +63,7 @@ const Homepage = () => {
               <div
                 key={artist.id}
                 className="homepage__popular_artists-grid-item"
+                onClick={() => navigate(`/artiste/${artist.id}`)}
               >
                 <img
                   src={artist.photo}
@@ -81,6 +85,7 @@ const Homepage = () => {
               <div
                 key={album.id}
                 className="homepage__popular_albums-grid-item"
+                onClick={() => navigate(`/album/${album.id}`)}
               >
                 <img
                   src={album.cover}
