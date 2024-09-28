@@ -1,0 +1,67 @@
+.artistePage {
+    color: white;
+    background-color: #121212;
+    padding: 20px;
+  }
+  
+  .artistePage__header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  
+  .artistePage__headerImage {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    filter: brightness(0.7);
+  }
+  
+  .artistePage__info {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+  }
+  
+  .artistePage__name {
+    font-size: 48px;
+    font-weight: bold;
+  }
+  
+  .artistePage__bio {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  
+  .artistePage__content {
+    padding: 20px 0;
+  }
+  
+  .artistePage__albums {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .artistePage__albumCard {
+    width: 200px;
+    background-color: #181818;
+    padding: 10px;
+    border-radius: 8px;
+    transition: transform 0.2s;
+  }
+  
+  .artistePage__albumCard:hover {
+    transform: scale(1.05);
+  }
+  
+  .artistePage__albumImage {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .artistePage__albumInfo {
+    margin-top: 10px;
+  }
+  
